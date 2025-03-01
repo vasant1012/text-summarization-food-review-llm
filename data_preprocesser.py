@@ -30,12 +30,17 @@ def text_cleaner(text,num):
 
 
 def clean_data(data):
+    #call the function
+    cleaned_text = []
+    for t in data['Text']:
+        cleaned_text.append(text_cleaner(t,0))
     cleaned_summary = []
     for t in data['Summary']:
         cleaned_summary.append(text_cleaner(t,1))
-    cleaned_summary = []
-    for t in data['Summary']:
-        cleaned_summary.append(text_cleaner(t,1))
+
+    data['cleaned_text'] = cleaned_text
+    data['cleaned_summary'] = cleaned_summary
+
     data.replace('', np.nan, inplace=True)
     data.dropna(axis=0,inplace=True)
     return data
@@ -55,7 +60,7 @@ def word_count(data):
     length_df = pd.DataFrame({'text':text_word_count, 'summary':summary_word_count})
 
     length_df.hist(bins = 30)
-    plt.show()
+    plt.savefig("word_count.png", dpi=300, bbox_inches='tight') 
     
 
 def create_training_data(data, max_text_len, max_summary_len):

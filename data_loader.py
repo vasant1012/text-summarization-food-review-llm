@@ -1,12 +1,7 @@
 import numpy as np
 import pandas as pd
-import requests
-from tqdm import tqdm
-from datasets import Dataset
+from data_preprocesser import clean_data, create_training_data
 import warnings
-# Set pandas display options
-pd.set_option("display.max_colwidth", 200)
-# Ignore warnings
 warnings.filterwarnings("ignore")
 
 def read_data(file_path):

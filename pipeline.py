@@ -77,6 +77,6 @@ if __name__ == '__main__':
     model = load_model('path_to_checkpoint', device='cuda')
     df = pd.read_csv('preprocessed_df.csv')
     train_df, eval_df = load_data(df, 30000, test_size=0.2)
-    trainer = load_trainer(train_df, eval_df)
+    trainer = load_trainer(train_df, eval_df, model)
     # Start training
     trainer.train()

@@ -23,5 +23,12 @@ The **Amazon Food Review** dataset consists of customer reviews, which serve as 
 - Pandas, NumPy  
 
 ## Future Enhancements
-- Experiment with fine-tuning different transformer architectures.  
-- Optimize inference speed for deployment.  
+ - I recommend you to increase the training dataset size and build the model. The generalization capability of a deep learning model enhances with an increase in the training dataset size
+
+ - Try implementing **Bi-Directional LSTM** which is capable of capturing the context from both the directions and results in a better context vector
+
+ - Use the **beam search strategy** for decoding the test sequence instead of using the greedy approach (argmax)
+
+ - Evaluate the performance of your model based on the **BLEU score**
+
+ - Implement **pointer-generator networks** and **coverage mechanisms**
